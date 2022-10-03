@@ -1,5 +1,10 @@
 openapi: 3.1.0
 components:
+  parameters:
+    id:
+      schema:
+        type: string
+      required: true
   schemas:
     Remote1:
       description: this is a duplicate of spec.yml#components/schemas/Remote1

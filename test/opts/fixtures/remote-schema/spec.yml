@@ -1,4 +1,7 @@
 openapi: 3.1.0
+paths: /api/user/{id}
+  parameters:
+    - $ref: ./remote1.yml#components/parameters/id
 components:
   schemas:
     Circular:
