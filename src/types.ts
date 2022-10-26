@@ -9,8 +9,22 @@ export interface OpenAPI2 {
 }
 
 export interface OpenAPI3 {
-  openapi: string; // required
+  openapi: '3.0'; // required
   paths?: Record<string, PathItemObject>; // required
+  components?: {
+    schemas?: Record<string, ReferenceObject | SchemaObject>;
+    responses?: Record<string, ReferenceObject | ResponseObject>;
+    parameters?: Record<string, ReferenceObject | ParameterObject>;
+    requestBodies?: Record<string, ReferenceObject | RequestBody>;
+    headers?: Record<string, ReferenceObject | HeaderObject>;
+    links?: Record<string, ReferenceObject | LinkObject>;
+  };
+}
+
+export interface OpenAPI31 {
+  openapi: '3.1'; // required
+  paths?: Record<string, PathItemObject>;
+  webhooks?: Record<string, PathItemObject | ReferenceObject>
   components?: {
     schemas?: Record<string, ReferenceObject | SchemaObject>;
     responses?: Record<string, ReferenceObject | ResponseObject>;
